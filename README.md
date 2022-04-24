@@ -58,15 +58,67 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+- Estrutura básica
+- CRUD
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+URL 
+http://localhost:3000/graphql
 
-## Stay in touch
+## Consulta
+```
+query {
+	chamados {
+    _id
+    descricao
+    status
+    ticketKey
+    data_criacao
+    data_atualizacao
+  }
+} 
+```
+## Insert
+```
+mutation {
+  createChamado(createChamadoInput:{
+    descricao: "teste3"
+    ticketKey: "1234e"
+    status: "ativo"
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+  }) {
+    _id
+    descricao
+    data_criacao
+    data_atualizacao
+    status
+  }
+}
+
+```
+## Update
+```
+mutation {
+  updateChamado(updateChamadoInput:{
+    _id: "6264a0537d5d986153dc564b"
+,
+    descricao: "update teste3 e"
+    ticketKey: "update 1234e d"
+    status: "inativo"
+  }
+  ) {
+    _id
+    descricao
+    ticketKey
+    data_criacao
+    data_atualizacao
+    status    
+  }
+}
+
+```
+
+
+https://docs.nestjs.com/techniques/mongodb
 
 ## License
 

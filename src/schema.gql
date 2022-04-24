@@ -1,0 +1,36 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Chamado {
+  _id: String!
+  descricao: String!
+  ticketKey: String!
+  status: String!
+  data_criacao: Float!
+  data_atualizacao: Float!
+}
+
+type Query {
+  chamados: [Chamado!]!
+  chamado(_id: String!): Chamado!
+}
+
+type Mutation {
+  createChamado(createChamadoInput: CreateChamadoInput!): Chamado!
+  updateChamado(updateChamadoInput: UpdateChamadoInput!): Chamado!
+  removeChamado(_id: String!): Chamado!
+}
+
+input CreateChamadoInput {
+  descricao: String!
+  ticketKey: String!
+  status: String!
+}
+
+input UpdateChamadoInput {
+  descricao: String!
+  ticketKey: String
+  status: String!
+  _id: String!
+}
